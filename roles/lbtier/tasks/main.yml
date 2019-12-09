@@ -1,23 +1,28 @@
 ---
 
- - name: install httpd package
-    yum:
-      name: httpd
-      state: latest
-  - name: install HAProxy
-    yum:
-      name: haproxy
-      state: latest
-  - name: enable HAProxy
-    service:
-      name: haproxy
-      enabled: yes
-  - name: configure haproxy
-    template:
-      src: haproxy.cfg.j2
-      dest: /etc/haproxy/haproxy.cfg
-  - name: restart HAproxy
-    service:
-      name: haproxy
-      state: restarted
+- name: install httpd package
+  yum:
+    name: httpd
+    state: latest
+
+- name: install HAProxy
+  yum:
+    name: haproxy
+    state: latest
+
+- name: enable HAProxy
+  service:
+    name: haproxy
+    enabled: yes
+
+- name: configure haproxy
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+  
+- name: restart HAproxy
+  service:
+    name: haproxy
+    state: restarted
+
 ---

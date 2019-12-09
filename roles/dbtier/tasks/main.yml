@@ -14,11 +14,18 @@
   debug:
     msg: "Either uncomment the postgres setup or manually login and initialize"
 
+- name: Check if PostgreSQL database is initialized 
+  stat:
+    path: "/var/lib/pgsql/data/PG_VERSION"
+  register: pgdata_dir_version
+
 - name: initilize postgres
   command: postgresql-setup initdb
+  when: not pgdata_dir_version.stat.exists
 
 - name: initilize postgres some more
   command: chkconfig postgresql on
+  when: not pgdata_dir_version.stat.exists
 
 - name: start postgres
   service:
