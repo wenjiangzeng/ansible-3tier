@@ -1,5 +1,3 @@
----
-
 
 - name: setup repo for all servers
   hosts: all
@@ -24,5 +22,3 @@
   become: yes
   roles:
     - dbtier
-
----

@@ -1,13 +1,12 @@
----
 
-- name: install progress
+- name: install postgres
   yum:
     name: postgresql-server
     state: latest
 
 - name: enable apache at boot
   service:
-    name: postgresgl
+    name: postgresql
     enabled: yes
 
 - name: tell user to finish setting up postgres
@@ -19,11 +18,11 @@
     path: "/var/lib/pgsql/data/PG_VERSION"
   register: pgdata_dir_version
 
-- name: initilize postgres
+- name: initilize postgres IF NECESSARY
   command: postgresql-setup initdb
   when: not pgdata_dir_version.stat.exists
 
-- name: initilize postgres some more
+- name: initilize postgres some more IF NECESSARY
   command: chkconfig postgresql on
   when: not pgdata_dir_version.stat.exists
 
@@ -32,4 +31,3 @@
     name: postgresql.service
     state: started
 
----
