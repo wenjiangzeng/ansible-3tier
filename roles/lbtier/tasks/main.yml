@@ -1,7 +1,7 @@
 
-- name: install httpd package
+- name: install httpie package
   yum:
-    name: httpd
+    name: httpie
     state: latest
 
 - name: install HAProxy
