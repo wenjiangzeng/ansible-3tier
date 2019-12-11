@@ -17,7 +17,7 @@
 
 [frontends]
 ## These are the frontends
-frontend1.{{ APP_GUID }}.internal ansible_ssh_host=frontend1.{{ APP_GUID }}.example.opentlc.com
+frontend1."{{ APP_GUID }}".internal ansible_ssh_host=frontend1."{{ APP_GUID }}".example.opentlc.com
 
 [apps]
 ## These are the apps
