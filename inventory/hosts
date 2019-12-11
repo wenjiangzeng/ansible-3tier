@@ -17,16 +17,16 @@
 
 [frontends]
 ## These are the frontends
-frontend1.{{ APP_GUID }}.internal ansible_ssh_host=frontend1.{{ APP_GUID }}.example.opentlc.com
+frontend1.99c4.internal ansible_ssh_host=frontend1.99c4.example.opentlc.com
 
 [apps]
 ## These are the apps
-app1.{{ APP_GUID }}.internal ansible_ssh_host=app1.{{ APP_GUID }}.example.opentlc.com
-app2.{{ APP_GUID }}.internal ansible_ssh_host=app2.{{ APP_GUID }}.example.opentlc.com
+app1.99c4.internal ansible_ssh_host=app1.99c4.example.opentlc.com
+app2.99c4.internal ansible_ssh_host=app2.99c4.example.opentlc.com
 
 [appdbs]
 ## These are the appdbs
-appdb1.{{ APP_GUID }}.internal ansible_ssh_host=appdb1.{{ APP_GUID }}.example.opentlc.com
+appdb1.99c4.internal ansible_ssh_host=appdb1.99c4.example.opentlc.com
 
 ## These are the support
 #[support]
